@@ -17,15 +17,15 @@ export function PhotoCarousel() {
   )
 
   const photos = [
-    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-31.jpg.jpeg", title: "Imagen 1" },
-    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-56.jpg.jpeg", title: "Imagen 2" },
-    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-105.jpg.jpeg", title: "Imagen 3" },
-    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/1-%20syo.jpeg", title: "Imagen 4" },
-    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/2-%20syo.jpeg", title: "Imagen 5" },
-    // { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg", title: "Imagen 6" },
-    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/4-%20syo.jpeg", title: "Imagen 7" },
-    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/5-%20syo.jpeg", title: "Imagen 8" }
+    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-31.jpg.jpeg", title: "La espera" },
+    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-56.jpg.jpeg", title: "Abrazos llenos de amor" },
+    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-105.jpg.jpeg", title: "Promesa Eterna" },
+    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/1-%20syo.jpeg", title: "Risas Compartidas" },
+    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/2-%20syo.jpeg", title: "Miradas que Conectan" },
+    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/4-%20syo.jpeg", title: "Almas Gemelas" },
+    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/5-%20syo.jpeg", title: "Juntos por Siempre" }
   ];
+
 
   return (
     <div className="space-y-12">

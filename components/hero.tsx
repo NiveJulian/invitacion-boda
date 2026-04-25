@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { Play, Volume2, VolumeX } from "lucide-react"
+import { Play, Pause, Volume2, VolumeX } from "lucide-react"
 
 export function Hero() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -18,15 +18,24 @@ export function Hero() {
     }
   }
 
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted
-      setIsMuted(videoRef.current.muted)
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (audioRef.current.paused) {
+        audioRef.current.play();
+        setIsAudioPlaying(true);
+      } else {
+        audioRef.current.pause();
+        setIsAudioPlaying(false);
+      }
     }
-  }
+  };
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <audio ref={audioRef} src="https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/boda-thousandyears.mp3" autoPlay loop preload="auto" />
       {/* Background Video */}
       <div
         className="absolute inset-0 bg-cover bg-center grayscale-[20%] opacity-90"
@@ -58,10 +67,10 @@ export function Hero() {
             <div className="h-[1px] w-32 bg-white/50 mx-auto" />
             <p className="text-2xl md:text-3xl font-light tracking-widest uppercase">18 de Diciembre 2026</p>
             <button
-              onClick={toggleMute}
+              onClick={toggleAudio}
               className="absolute bottom-10 right-10 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
             >
-              {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+              {isAudioPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
             </button>
           </div>
         )}

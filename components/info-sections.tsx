@@ -13,19 +13,13 @@ export function InfoSections() {
       title: "Tips & Notas",
       content: "Si tienes alguna restricción alimentaria (celiaquía, vegetariano, etc.), por favor avísanos al confirmar.",
       color: "bg-[#f8f9fa]"
-    },
-    {
-      icon: MessageSquare,
-      title: "Niños",
-      content: "Amamos a los niños, pero esta vez queremos que los papás disfruten de una noche de fiesta. ¡Gracias por entender!",
-      color: "bg-[#fdfbf7]"
     }
   ]
 
   return (
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-2 gap-8">
       {sections.map((section, index) => (
-        <div 
+        <div
           key={index}
           className={`${section.color} p-8 rounded-2xl border border-[#f0f0f0] text-center space-y-6 hover:shadow-lg transition-all duration-500`}
         >
