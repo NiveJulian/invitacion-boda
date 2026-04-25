@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Boda Seba & Orne',
     images: [
       {
-        url: 'https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg',
+        url: 'https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=2',
         width: 1200,
         height: 630,
         alt: 'Seba & Orne - Nuestra Boda',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Seba & Orne | Nuestra Boda',
     description: 'Acompañanos a celebrar nuestro amor.',
-    images: ['https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg'],
+    images: ['https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=2'],
   },
   icons: {
     icon: [
