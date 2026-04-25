@@ -21,7 +21,11 @@ export function Preloader() {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    // Verificar si ya se cargó usando cookies (o sessionStorage como fallback)
+    // Bloquear scroll mientras carga
+    if (isLoading) {
+      document.body.style.overflow = "hidden"
+    }
+
     const getCookie = (name: string) => {
       const value = `; ${document.cookie}`
       const parts = value.split(`; ${name}=`)
@@ -32,6 +36,7 @@ export function Preloader() {
     
     if (hasLoaded) {
       setIsLoading(false)
+      document.body.style.overflow = "unset"
       return
     }
 
@@ -55,7 +60,7 @@ export function Preloader() {
       .then(() => {
         setTimeout(() => {
           setIsLoading(false)
-          // Guardar en sessionStorage y en una Cookie (expira en 1 día)
+          document.body.style.overflow = "unset"
           sessionStorage.setItem("app-loaded", "true")
           document.cookie = "app-preloaded=true; max-age=86400; path=/"
           
@@ -63,13 +68,19 @@ export function Preloader() {
             description: "¡Disfruta de nuestra invitación!",
             duration: 4000,
           })
-        }, 1000)
+        }, 1500)
       })
       .catch((err) => {
         console.error("Error preloading images:", err)
         setIsLoading(false)
+        document.body.style.overflow = "unset"
       })
-  }, [])
+
+    // Limpieza al desmontar
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isLoading])
 
   return (
     <AnimatePresence>
