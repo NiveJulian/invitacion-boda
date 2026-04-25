@@ -1,0 +1,89 @@
+"use client"
+
+import { useState, useRef } from "react"
+import { Play, Volume2, VolumeX } from "lucide-react"
+
+export function Hero() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
+  const [videoError, setVideoError] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handleStart = () => {
+    setIsPlaying(true)
+    if (videoRef.current) {
+      videoRef.current.play()
+      videoRef.current.muted = false
+      setIsMuted(false)
+    }
+  }
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted
+      setIsMuted(videoRef.current.muted)
+    }
+  }
+
+  return (
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
+      {!videoError ? (
+        <video
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover grayscale-[20%] opacity-90"
+          src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-holding-hands-and-walking-40432-large.mp4"
+          poster="/images/Seba y Orne - Pre Boda-33.jpg.jpeg"
+          loop
+          muted={isMuted}
+          playsInline
+          onError={() => setVideoError(true)}
+        />
+      ) : (
+        <div
+          className="absolute inset-0 bg-cover bg-center grayscale-[20%] opacity-90"
+          style={{ backgroundImage: 'url("/images/Seba y Orne - Pre Boda-33.jpg.jpeg")' }}
+        />
+      )}
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+
+      {/* Content */}
+      <div className="relative z-10 text-center text-white px-4">
+        {!isPlaying ? (
+          <button
+            onClick={handleStart}
+            className="group flex flex-col items-center justify-center space-y-6 transition-all duration-700 hover:scale-105"
+          >
+            <div className="w-24 h-24 rounded-full border-2 border-white/50 flex items-center justify-center bg-white/10 backdrop-blur-md group-hover:bg-white/20 transition-all">
+              <Play className="w-10 h-10 fill-white" />
+            </div>
+            <div className="space-y-2">
+              <h1 className="text-4xl md:text-6xl font-serif tracking-widest uppercase">Seba & Orne</h1>
+              <p className="text-lg md:text-xl font-light tracking-[0.3em] uppercase opacity-80">Nuestra Boda</p>
+            </div>
+            <p className="text-sm italic opacity-60 animate-pulse">Haz clic para entrar</p>
+          </button>
+        ) : (
+          <div className="animate-in fade-in duration-1000 space-y-8">
+            <h1 className="text-6xl md:text-8xl font-serif tracking-widest mb-4">S & O</h1>
+            <div className="h-[1px] w-32 bg-white/50 mx-auto" />
+            <p className="text-2xl md:text-3xl font-light tracking-widest uppercase">18 de Diciembre 2026</p>
+            <button
+              onClick={toggleMute}
+              className="absolute bottom-10 right-10 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
+            >
+              {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-4 animate-bounce opacity-60">
+        <span className="text-xs uppercase tracking-[0.2em] text-white">Desliza</span>
+        <div className="w-[1px] h-12 bg-white/50" />
+      </div>
+    </section>
+  )
+}
