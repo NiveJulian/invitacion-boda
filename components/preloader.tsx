@@ -3,8 +3,11 @@
 import { useEffect, useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-const IMAGES_TO_PRELOAD = [
-  "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg",
+const CRITICAL_IMAGES = [
+  "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg", // Hero principal
+]
+
+const SECONDARY_IMAGES = [
   "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-31.jpg.jpeg",
   "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-56.jpg.jpeg",
   "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-105.jpg.jpeg",
@@ -41,27 +44,40 @@ export function Preloader() {
       return
     }
 
+    // Timeout de seguridad: si tarda más de 5 segundos, quitamos el loader
+    const safetyTimeout = setTimeout(() => {
+      if (isLoading) {
+        setIsLoading(false)
+        document.body.style.overflow = "unset"
+      }
+    }, 5000)
+
     let loadedCount = 0
-    const totalImages = IMAGES_TO_PRELOAD.length
+    const totalCritical = CRITICAL_IMAGES.length
 
     const preloadImage = (src: string) => {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         const img = new Image()
         img.src = src
-        img.onload = () => {
-          loadedCount++
-          setProgress(Math.round((loadedCount / totalImages) * 100))
-          resolve(src)
-        }
-        img.onerror = reject
+        img.onload = () => resolve(src)
+        img.onerror = () => resolve(src) // No bloquear por errores
       })
     }
 
-    Promise.all(IMAGES_TO_PRELOAD.map(preloadImage))
+    // Cargar imágenes secundarias en segundo plano (sin esperar)
+    SECONDARY_IMAGES.forEach(src => {
+      const img = new Image()
+      img.src = src
+    })
+
+    // Esperar solo las críticas para quitar el loader
+    Promise.all(CRITICAL_IMAGES.map(preloadImage))
       .then(() => {
+        setProgress(100)
         setTimeout(() => {
           setIsLoading(false)
           document.body.style.overflow = "unset"
+          clearTimeout(safetyTimeout)
           
           if (!hasTriggeredToast.current) {
             hasTriggeredToast.current = true
@@ -81,17 +97,12 @@ export function Preloader() {
               },
             })
           }
-        }, 1500)
-      })
-      .catch((err) => {
-        console.error("Error preloading images:", err)
-        setIsLoading(false)
-        document.body.style.overflow = "unset"
+        }, 800)
       })
 
-    // Limpieza al desmontar
     return () => {
       document.body.style.overflow = "unset"
+      clearTimeout(safetyTimeout)
     }
   }, [isLoading])
 
