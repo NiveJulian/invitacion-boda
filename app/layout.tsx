@@ -17,8 +17,30 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Nuestra Boda | Seba & Orne',
-  description: 'Estás cordialmente invitado a celebrar nuestra unión el 18 de Diciembre de 2026. ¡Te esperamos!',
+  description: 'Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos. ¡Te esperamos el 18 de Diciembre de 2026!',
   keywords: ['boda', 'invitación', 'casamiento', 'Seba y Orne'],
+  openGraph: {
+    title: 'Seba & Orne | Nuestra Boda',
+    description: 'Acompañanos a celebrar nuestro amor. ¡Te esperamos!',
+    url: 'https://invitacion-boda-seba-orne.vercel.app', // Debería ser la URL real
+    siteName: 'Boda Seba & Orne',
+    images: [
+      {
+        url: 'https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Seba & Orne - Nuestra Boda',
+      },
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Seba & Orne | Nuestra Boda',
+    description: 'Acompañanos a celebrar nuestro amor.',
+    images: ['https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg'],
+  },
   icons: {
     icon: [
       {
