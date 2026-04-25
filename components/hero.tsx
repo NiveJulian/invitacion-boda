@@ -28,23 +28,10 @@ export function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background Video */}
-      {!videoError ? (
-        <video
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover grayscale-[20%] opacity-90"
-          src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-holding-hands-and-walking-40432-large.mp4"
-          poster="/images/Seba y Orne - Pre Boda-33.jpg.jpeg"
-          loop
-          muted={isMuted}
-          playsInline
-          onError={() => setVideoError(true)}
-        />
-      ) : (
-        <div
-          className="absolute inset-0 bg-cover bg-center grayscale-[20%] opacity-90"
-          style={{ backgroundImage: 'url("/images/Seba y Orne - Pre Boda-33.jpg.jpeg")' }}
-        />
-      )}
+      <div
+        className="absolute inset-0 bg-cover bg-center grayscale-[20%] opacity-90"
+        style={{ backgroundImage: 'url("https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg")' }}
+      />
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />

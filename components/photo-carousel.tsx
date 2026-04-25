@@ -17,14 +17,15 @@ export function PhotoCarousel() {
   )
 
   const photos = [
-    { url: "/images/Seba y Orne - Pre Boda-100.jpg.jpeg", title: "Momentos Juntos" },
-    { url: "/images/Seba y Orne - Pre Boda-105.jpg.jpeg", title: "Nuestra Historia" },
-    { url: "/images/Seba y Orne - Pre Boda-12 2.jpg.jpeg", title: "Amor Eterno" },
-    { url: "/images/Seba y Orne - Pre Boda-31.jpg.jpeg", title: "Caminando Juntos" },
-    { url: "/images/Seba y Orne - Pre Boda-56.jpg.jpeg", title: "El Compromiso" },
-    { url: "/images/Seba y Orne - Pre Boda-67.jpg.jpeg", title: "Nuestros Viajes" },
-    { url: "/images/Seba y Orne - Pre Boda-99.jpg.jpeg", title: "Para Siempre" }
-  ]
+    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-31.jpg.jpeg", title: "Imagen 1" },
+    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-56.jpg.jpeg", title: "Imagen 2" },
+    { url: "https://cdn-byfest.infinityfreeapp.com/images/Seba%20y%20Orne%20-%20Pre%20Boda-105.jpg.jpeg", title: "Imagen 3" },
+    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/1-%20syo.jpeg", title: "Imagen 4" },
+    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/2-%20syo.jpeg", title: "Imagen 5" },
+    // { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg", title: "Imagen 6" },
+    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/4-%20syo.jpeg", title: "Imagen 7" },
+    { url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/5-%20syo.jpeg", title: "Imagen 8" }
+  ];
 
   return (
     <div className="space-y-12">
@@ -45,8 +46,8 @@ export function PhotoCarousel() {
               <div className="p-1">
                 <Card className="border-none overflow-hidden rounded-3xl shadow-2xl">
                   <CardContent className="flex aspect-video items-center justify-center p-0 relative">
-                    <img 
-                      src={photo.url} 
+                    <img
+                      src={photo.url}
                       alt={photo.title}
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     />
