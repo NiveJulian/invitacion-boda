@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const IMAGES_TO_PRELOAD = [
@@ -19,6 +19,7 @@ import { toast } from "sonner"
 export function Preloader() {
   const [isLoading, setIsLoading] = useState(true)
   const [progress, setProgress] = useState(0)
+  const hasTriggeredToast = useRef(false)
 
   useEffect(() => {
     // Bloquear scroll mientras carga
@@ -61,23 +62,25 @@ export function Preloader() {
         setTimeout(() => {
           setIsLoading(false)
           document.body.style.overflow = "unset"
-          toast("Uso de Cookies", {
-            description: "Utilizamos cookies para mejorar tu experiencia y asegurar que las imágenes se carguen correctamente.",
-            duration: Infinity,
-            action: {
-              label: "Aceptar",
-              onClick: () => {
-                document.cookie = "app-preloaded=true; max-age=86400; path=/"
-                sessionStorage.setItem("app-loaded", "true")
+          
+          if (!hasTriggeredToast.current) {
+            hasTriggeredToast.current = true
+            toast("Uso de Cookies", {
+              description: "Utilizamos cookies para mejorar tu experiencia.",
+              duration: Infinity,
+              action: {
+                label: "Aceptar",
+                onClick: () => {
+                  document.cookie = "app-preloaded=true; max-age=86400; path=/"
+                  sessionStorage.setItem("app-loaded", "true")
+                },
               },
-            },
-            cancel: {
-              label: "Denegar",
-              onClick: () => {
-                console.log("Cookies denegadas")
+              cancel: {
+                label: "Denegar",
+                onClick: () => {},
               },
-            },
-          })
+            })
+          }
         }, 1500)
       })
       .catch((err) => {

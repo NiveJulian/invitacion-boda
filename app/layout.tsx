@@ -51,7 +51,7 @@ export default function RootLayout({
       <body className={`${cormorant.variable} ${playfair.variable} font-serif antialiased`}>
         <Preloader />
         {children}
-        <Toaster position="top-center" richColors />
+        <Toaster position="bottom-right" richColors />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
