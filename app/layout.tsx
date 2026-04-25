@@ -38,6 +38,9 @@ export const metadata: Metadata = {
   },
 }
 
+import { Toaster } from "sonner"
+import { Preloader } from "@/components/preloader"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,7 +49,9 @@ export default function RootLayout({
   return (
     <html lang="es" className="bg-background">
       <body className={`${cormorant.variable} ${playfair.variable} font-serif antialiased`}>
+        <Preloader />
         {children}
+        <Toaster position="top-center" richColors />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
