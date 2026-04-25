@@ -21,12 +21,12 @@ export const metadata: Metadata = {
   keywords: ['boda', 'invitación', 'casamiento', 'Seba y Orne'],
   openGraph: {
     title: 'Seba & Orne | Nuestra Boda',
-    description: 'Acompañanos a celebrar nuestro amor. ¡Te esperamos!',
-    url: 'https://invitacion-boda-seba-orne.vercel.app', // Debería ser la URL real
+    description: 'Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos.',
+    url: 'https://sebayorne.byfesta.com.ar',
     siteName: 'Boda Seba & Orne',
     images: [
       {
-        url: 'https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=2',
+        url: 'https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=3',
         width: 1200,
         height: 630,
         alt: 'Seba & Orne - Nuestra Boda',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Seba & Orne | Nuestra Boda',
     description: 'Acompañanos a celebrar nuestro amor.',
-    images: ['https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=2'],
+    images: ['https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=3'],
   },
   icons: {
     icon: [
