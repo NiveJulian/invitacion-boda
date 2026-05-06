@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Boda Ornella y Sebastian",
     images: [
       {
-        url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/2-%20syo.jpeg?v=6",
+        url: "/icon.jpeg",
         width: 1200,
         height: 630,
         alt: "Ornella y Sebastian - Nuestra Boda",
@@ -52,9 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ornella y Sebastian | Nuestra Boda",
     description: "Acompañanos a celebrar nuestro amor.",
-    images: [
-      "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/2-%20syo.jpeg?v=6",
-    ],
+    images: ["/icon.jpeg"],
   },
   icons: {
     icon: [
