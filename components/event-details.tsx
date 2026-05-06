@@ -53,17 +53,17 @@ export function EventDetails() {
           <h3 className="text-4xl font-script font-normal mb-4">Ceremonia</h3>
           <div className="space-y-2 text-[#8e8e8e] font-light">
             <p className="flex items-center justify-center gap-2">
-              <Clock className="w-4 h-4" /> 18:00 Hs
+              <Clock className="w-4 h-4" /> 19:00 Hs
             </p>
             <p className="flex items-center justify-center gap-2">
-              <MapPin className="w-4 h-4" /> Sociedad Rural
+              <MapPin className="w-4 h-4" /> Iglesia San José
             </p>
             <p className="text-sm italic">Paso de los Libres, Corrientes</p>
           </div>
           <MapButton 
-            name="Sociedad Rural" 
+            name="Iglesia San José" 
             address="Paso de los Libres, Corrientes"
-            mapUrl="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2060.2501730493486!2d-57.18508960590598!3d-29.722251166499294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1777131441425!5m2!1ses!2sar"
+            mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3434.619379854445!2d-57.1729094!3d-29.7161833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95aea3092244497b%3A0xc0772093f4c65360!2sIglesia%20San%20Jos%C3%A9!5e0!3m2!1ses!2sar!4v1715031123456!5m2!1ses!2sar"
           />
         </div>
 
