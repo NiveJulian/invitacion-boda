@@ -49,7 +49,7 @@ export function Countdown({ targetDate }: CountdownProps) {
       <div className="space-y-4">
         <h2 className="text-sm uppercase tracking-[0.3em] text-[#8e8e8e]">Cada segundo cuenta</h2>
         <div className="h-[1px] w-12 bg-[#c9a86c] mx-auto opacity-50" />
-        <h3 className="text-3xl md:text-5xl font-serif text-[#4a4a4a]">Faltan para el Gran Día</h3>
+        <h3 className="text-4xl md:text-6xl font-script text-[#4a4a4a]">Faltan para el Gran Día</h3>
       </div>
 
       <div className="grid grid-cols-4 gap-4 md:gap-12 max-w-2xl mx-auto">

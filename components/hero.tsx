@@ -56,16 +56,16 @@ export function Hero() {
               <Play className="w-10 h-10 fill-white" />
             </div>
             <div className="space-y-2">
-              <h1 className="text-4xl md:text-6xl font-serif tracking-widest uppercase">Seba & Orne</h1>
-              <p className="text-lg md:text-xl font-light tracking-[0.3em] uppercase opacity-80">Nuestra Boda</p>
+              <h1 className="text-5xl md:text-7xl font-script tracking-normal">Ornella y Sebastian</h1>
+              <p className="text-lg md:text-xl font-accent font-light tracking-[0.6em] uppercase opacity-80">Nuestra Boda</p>
             </div>
             <p className="text-sm italic opacity-60 animate-pulse">Haz clic para entrar</p>
           </button>
         ) : (
           <div className="animate-in fade-in duration-1000 space-y-8">
-            <h1 className="text-6xl md:text-8xl font-serif tracking-widest mb-4">S & O</h1>
+            <h1 className="text-8xl md:text-[10rem] font-script tracking-normal mb-4">O & S</h1>
             <div className="h-[1px] w-32 bg-white/50 mx-auto" />
-            <p className="text-2xl md:text-3xl font-light tracking-widest uppercase">18 de Diciembre 2026</p>
+            <p className="text-2xl md:text-3xl font-accent font-light tracking-[0.6em] uppercase">18 de Diciembre 2026</p>
             <button
               onClick={toggleAudio}
               className="absolute bottom-10 right-10 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"

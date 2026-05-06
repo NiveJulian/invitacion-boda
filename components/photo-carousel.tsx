@@ -30,7 +30,7 @@ export function PhotoCarousel() {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl md:text-5xl font-serif text-[#4a4a4a] mb-4">Retratos de nuestro Amor</h2>
+        <h2 className="text-5xl md:text-7xl font-script text-[#4a4a4a] mb-4">Retratos de nuestro Amor</h2>
         <p className="text-[#8e8e8e] font-light tracking-widest uppercase text-xs">Momentos compartidos</p>
       </div>
 

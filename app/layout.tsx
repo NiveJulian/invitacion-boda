@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Playfair_Display } from 'next/font/google'
+import { Cormorant_Garamond, Playfair_Display, Playwrite_DE_SAS, Josefin_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -15,21 +15,31 @@ const playfair = Playfair_Display({
   variable: "--font-playfair"
 });
 
+const playwrite = Playwrite_DE_SAS({
+  variable: "--font-playwrite"
+});
+
+const josefin = Josefin_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-josefin"
+});
+
 export const metadata: Metadata = {
-  title: 'Nuestra Boda | Seba & Orne',
+  title: 'Nuestra Boda | Ornella y Sebastian',
   description: 'Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos. ¡Te esperamos el 18 de Diciembre de 2026!',
-  keywords: ['boda', 'invitación', 'casamiento', 'Seba y Orne'],
+  keywords: ['boda', 'invitación', 'casamiento', 'Ornella y Sebastian'],
   openGraph: {
-    title: 'Seba & Orne | Nuestra Boda',
+    title: 'Ornella y Sebastian | Nuestra Boda',
     description: 'Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos.',
-    url: 'https://sebayorne.byfesta.com.ar',
-    siteName: 'Boda Seba & Orne',
+    url: 'https://ornellaysebastian.byfesta.com.ar',
+    siteName: 'Boda Ornella y Sebastian',
     images: [
       {
         url: 'https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=3',
         width: 1200,
         height: 630,
-        alt: 'Seba & Orne - Nuestra Boda',
+        alt: 'Ornella y Sebastian - Nuestra Boda',
       },
     ],
     locale: 'es_AR',
@@ -37,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Seba & Orne | Nuestra Boda',
+    title: 'Ornella y Sebastian | Nuestra Boda',
     description: 'Acompañanos a celebrar nuestro amor.',
     images: ['https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=3'],
   },
@@ -70,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="bg-background">
-      <body className={`${cormorant.variable} ${playfair.variable} font-serif antialiased`}>
+      <body className={`${cormorant.variable} ${playfair.variable} ${playwrite.variable} ${josefin.variable} antialiased`}>
         <Preloader />
         {children}
         <Toaster position="bottom-right" richColors />
