@@ -28,7 +28,7 @@ export function GiftsSection() {
         <h2 className="text-4xl md:text-6xl font-script font-normal text-[#4a4a4a]">Mesa de Regalos</h2>
         <div className="ornament mx-auto w-32 opacity-30" />
         <p className="max-w-xl mx-auto text-[#8e8e8e] font-light leading-relaxed">
-          Tu presencia es nuestro mejor regalo. Pero si deseas hacernos un presente, aquí te dejamos los datos para ayudarnos en nuestra luna de miel.
+          Tu presencia es nuestro mejor regalo. Pero si deseas hacernos un presente, aquí te dejamos los datos. El costo de la tarjeta es de <b>$45.000</b>. Por favor, enviar comprobante de pago para confirmar asistencia.
         </p>
       </div>
 

@@ -26,15 +26,15 @@ const josefin = Josefin_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Nuestra Boda | Ornella y Sebastian",
+  title: "Invitación | Ornella y Sebastian",
   description:
-    "Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos. ¡Te esperamos el 18 de Diciembre de 2026!",
+    "Te invitamos a ser parte de este momento tan especial. ¡Nos casamos el 18 de Diciembre de 2026! Entrá para ver los detalles.",
   keywords: ["boda", "invitación", "casamiento", "Ornella y Sebastian"],
   openGraph: {
     title: "Ornella y Sebastian | Nuestra Boda",
     description:
       "Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos.",
-    url: "https://sebayorne.byfesta.com.ar",
+    url: "https://ornellaysebastian.byfesta.com.ar",
     siteName: "Boda Ornella y Sebastian",
     images: [
       {

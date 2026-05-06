@@ -5,13 +5,13 @@ export function InfoSections() {
     {
       icon: Shirt,
       title: "Dress Code",
-      content: "Elegante. (Prohibido color marrón, usan las damas de honor; prohibido color blanco, novia). Colores sugeridos: Tierra, verde, celestito, amarillito, etc. Estilo boho.",
+      content: "Elegante. Color prohibido: Blanco (reservado novia) y Marrón (reservado damas de honor). Colores sugeridos: Tierra, verde, celestito, amarillito, etc. Estilo boho.",
       color: "bg-[#fdfbf7]"
     },
     {
       icon: Info,
       title: "Tarjeta & Confirmación",
-      content: "Valor de la tarjeta: $30.000. Se confirma presencia una vez abonada la misma (Tiempo límite hasta el 1 de Agosto).",
+      content: "Valor de la tarjeta: $45.000. Se confirma asistencia con el comprobante de pago (Tiempo límite hasta el 1 de Agosto).",
       color: "bg-[#f8f9fa]"
     }
   ]
