@@ -26,7 +26,7 @@ const josefin = Josefin_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ornellaysebastian.byfesta.com.ar'),
+  metadataBase: new URL("https://ornellaysebastian.byfesta.com.ar"),
   title: "Invitación | Ornella y Sebastian",
   description:
     "Te invitamos a ser parte de este momento tan especial. ¡Nos casamos el 18 de Diciembre de 2026! Entrá para ver los detalles.",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Boda Ornella y Sebastian",
     images: [
       {
-        url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=5",
+        url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/2-%20syo.jpeg?v=6",
         width: 1200,
         height: 630,
         alt: "Ornella y Sebastian - Nuestra Boda",
@@ -52,7 +52,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ornella y Sebastian | Nuestra Boda",
     description: "Acompañanos a celebrar nuestro amor.",
-    images: ["https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=5"],
+    images: [
+      "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/2-%20syo.jpeg?v=6",
+    ],
   },
   icons: {
     icon: [
@@ -94,13 +96,17 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS:wght@100..400&display=swap"
           rel="stylesheet"
         />
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           .font-script {
             font-family: 'Playwrite DE SAS', cursive !important;
             font-weight: 400 !important;
             font-optical-sizing: auto;
           }
-        `}} />
+        `,
+          }}
+        />
       </head>
       <body
         className={`${cormorant.variable} ${playfair.variable} ${josefin.variable} antialiased`}
