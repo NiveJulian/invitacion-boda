@@ -12,19 +12,26 @@ export function MusicForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmit = async (data: any) => {
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3L9NuRn-RBeQyOQUb8LhBw2lTWbTGwwveUuKaCJuJls3SIv65arQr0f2OGViJtF4/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzzBQXvTQdFmf40W0qe-ePLWIcFdft5_TL0FWBnqFAC28s-VWtpjdIVVDSd0nvHdWg/exec";
+
+    const formData = new URLSearchParams();
+    formData.append("song", data.song);
+    formData.append("guest", data.guest || "");
+    formData.append("sheet", "Musica");
 
     try {
       setIsSubmitting(true);
-      const response = await fetch(SCRIPT_URL, {
+      await fetch(SCRIPT_URL, {
         method: "POST",
-        body: JSON.stringify({ ...data, sheet: "Musica" }),
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
       });
 
-      if (response.ok) {
-        toast.success("¡Confirmación enviada! Te esperamos.");
-        reset();
-      }
+      toast.success("¡Sugerencia enviada! Gracias.");
+      reset();
     } catch (error) {
       toast.error("Hubo un error, por favor intenta de nuevo.");
     } finally {

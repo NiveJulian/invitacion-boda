@@ -11,7 +11,15 @@ import { Loader2 } from "lucide-react"
 import { useState } from "react"
 
 export function RSVPForm() {
-  const { register, handleSubmit, reset, setValue } = useForm()
+  const { register, handleSubmit, reset, setValue, getValues } = useForm({
+    defaultValues: {
+      attendance: "si",
+      name: "",
+      phone: "",
+      diet: "",
+      message: ""
+    }
+  })
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [receiptUrl, setReceiptUrl] = useState("");
@@ -50,21 +58,36 @@ export function RSVPForm() {
       return;
     }
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3L9NuRn-RBeQyOQUb8LhBw2lTWbTGwwveUuKaCJuJls3SIv65arQr0f2OGViJtF4/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzzBQXvTQdFmf40W0qe-ePLWIcFdft5_TL0FWBnqFAC28s-VWtpjdIVVDSd0nvHdWg/exec";
+
+    // Usamos URLSearchParams para que Google Script lo reciba como parámetros de formulario
+    const formData = new URLSearchParams();
+    formData.append("name", data.name);
+    formData.append("phone", data.phone || "");
+    formData.append("attendance", data.attendance);
+    formData.append("diet", data.diet || "");
+    formData.append("message", data.message || "");
+    formData.append("receipt", receiptUrl);
+    formData.append("sheet", "RSVP");
+
+    console.log("Enviando datos...", Object.fromEntries(formData));
 
     try {
       setIsSubmitting(true);
-      const response = await fetch(SCRIPT_URL, {
+      await fetch(SCRIPT_URL, {
         method: "POST",
-        body: JSON.stringify({ ...data, receipt: receiptUrl, sheet: "RSVP" }),
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
       });
 
-      if (response.ok) {
-        toast.success("¡Confirmación enviada! Te esperamos.");
-        reset();
-        setReceiptUrl("");
-      }
+      toast.success("¡Confirmación enviada! Te esperamos.");
+      reset();
+      setReceiptUrl("");
     } catch (error) {
+      console.error("Error al enviar:", error);
       toast.error("Hubo un error, por favor intenta de nuevo.");
     } finally {
       setIsSubmitting(false);
