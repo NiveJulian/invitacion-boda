@@ -27,7 +27,7 @@ export default function WeddingPage() {
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: "-100px" },
     transition: { duration: 0.8, ease: "easeOut" }
-  }
+  } as const
 
   return (
     <main className="min-h-screen bg-[#faf9f6] text-[#4a4a4a] overflow-x-hidden">

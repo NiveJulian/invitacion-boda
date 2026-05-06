@@ -1,91 +1,116 @@
-import type { Metadata } from 'next'
-import { Cormorant_Garamond, Playfair_Display, Playwrite_DE_SAS, Josefin_Sans } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata } from "next";
+import {
+  Cormorant_Garamond,
+  Playfair_Display,
+  Josefin_Sans,
+} from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant"
+  variable: "--font-cormorant",
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair"
-});
-
-const playwrite = Playwrite_DE_SAS({
-  variable: "--font-playwrite"
+  variable: "--font-playfair",
 });
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
-  variable: "--font-josefin"
+  variable: "--font-josefin",
 });
 
 export const metadata: Metadata = {
-  title: 'Nuestra Boda | Ornella y Sebastian',
-  description: 'Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos. ¡Te esperamos el 18 de Diciembre de 2026!',
-  keywords: ['boda', 'invitación', 'casamiento', 'Ornella y Sebastian'],
+  title: "Nuestra Boda | Ornella y Sebastian",
+  description:
+    "Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos. ¡Te esperamos el 18 de Diciembre de 2026!",
+  keywords: ["boda", "invitación", "casamiento", "Ornella y Sebastian"],
   openGraph: {
-    title: 'Ornella y Sebastian | Nuestra Boda',
-    description: 'Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos.',
-    url: 'https://ornellaysebastian.byfesta.com.ar',
-    siteName: 'Boda Ornella y Sebastian',
+    title: "Ornella y Sebastian | Nuestra Boda",
+    description:
+      "Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos.",
+    url: "https://sebayorne.byfesta.com.ar",
+    siteName: "Boda Ornella y Sebastian",
     images: [
       {
-        url: 'https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=3',
+        url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=3",
         width: 1200,
         height: 630,
-        alt: 'Ornella y Sebastian - Nuestra Boda',
+        alt: "Ornella y Sebastian - Nuestra Boda",
       },
     ],
-    locale: 'es_AR',
-    type: 'website',
+    locale: "es_AR",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Ornella y Sebastian | Nuestra Boda',
-    description: 'Acompañanos a celebrar nuestro amor.',
-    images: ['https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=3'],
+    card: "summary_large_image",
+    title: "Ornella y Sebastian | Nuestra Boda",
+    description: "Acompañanos a celebrar nuestro amor.",
+    images: [
+      "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/3-%20syo.jpeg?v=3",
+    ],
   },
   icons: {
     icon: [
       {
-        url: '/favicon.ico',
-        media: '(prefers-color-scheme: light)',
+        url: "/favicon.ico",
+        media: "(prefers-color-scheme: light)",
       },
       {
-        url: '/favicon.ico',
-        media: '(prefers-color-scheme: dark)',
+        url: "/favicon.ico",
+        media: "(prefers-color-scheme: dark)",
       },
       {
-        url: '/favicon.ico',
-        type: 'image/svg+xml',
+        url: "/favicon.ico",
+        type: "image/svg+xml",
       },
     ],
-    apple: '/apple-icon.png',
+    apple: "/apple-icon.png",
   },
-}
+};
 
-import { Toaster } from "sonner"
-import { Preloader } from "@/components/preloader"
+import { Toaster } from "sonner";
+import { Preloader } from "@/components/preloader";
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="es" className="bg-background">
-      <body className={`${cormorant.variable} ${playfair.variable} ${playwrite.variable} ${josefin.variable} antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS:wght@100..400&display=swap"
+          rel="stylesheet"
+        />
+        <style dangerouslySetInnerHTML={{ __html: `
+          .font-script {
+            font-family: 'Playwrite DE SAS', cursive !important;
+            font-weight: 400 !important;
+            font-optical-sizing: auto;
+          }
+        `}} />
+      </head>
+      <body
+        className={`${cormorant.variable} ${playfair.variable} ${josefin.variable} antialiased`}
+      >
         <Preloader />
         {children}
         <Toaster position="bottom-right" richColors />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
-  )
+  );
 }

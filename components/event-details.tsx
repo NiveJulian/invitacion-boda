@@ -40,7 +40,7 @@ export function EventDetails() {
   return (
     <div className="space-y-20">
       <div className="text-center">
-        <h2 className="text-6xl md:text-8xl font-script text-[#4a4a4a] mb-6">Nuestra Boda</h2>
+        <h2 className="text-6xl md:text-8xl font-script font-normal text-[#4a4a4a] mb-6">Nuestra Boda</h2>
         <div className="ornament mx-auto w-48 mb-12" />
       </div>
 
@@ -50,7 +50,7 @@ export function EventDetails() {
           <div className="w-16 h-16 rounded-full bg-[#faf9f6] flex items-center justify-center mb-8 text-[#c9a86c] group-hover:scale-110 transition-transform">
             <Calendar className="w-8 h-8" />
           </div>
-          <h3 className="text-4xl font-script mb-4">Ceremonia</h3>
+          <h3 className="text-4xl font-script font-normal mb-4">Ceremonia</h3>
           <div className="space-y-2 text-[#8e8e8e] font-light">
             <p className="flex items-center justify-center gap-2">
               <Clock className="w-4 h-4" /> 18:00 Hs
@@ -72,7 +72,7 @@ export function EventDetails() {
           <div className="w-16 h-16 rounded-full bg-[#faf9f6] flex items-center justify-center mb-8 text-[#c9a86c] group-hover:scale-110 transition-transform">
             <Clock className="w-8 h-8" />
           </div>
-          <h3 className="text-4xl font-script mb-4">Celebración</h3>
+          <h3 className="text-4xl font-script font-normal mb-4">Celebración</h3>
           <div className="space-y-2 text-[#8e8e8e] font-light">
             <p className="flex items-center justify-center gap-2">
               <Clock className="w-4 h-4" /> 21:00 Hs

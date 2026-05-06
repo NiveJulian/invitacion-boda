@@ -39,7 +39,7 @@ export function RSVPForm() {
   return (
     <div id="rsvp" className="space-y-12">
       <div className="text-center space-y-4">
-        <h2 className="text-4xl md:text-6xl font-serif text-[#4a4a4a]">Confirma tu Asistencia</h2>
+        <h2 className="text-4xl md:text-6xl font-script font-normal text-[#4a4a4a]">Confirma tu Asistencia</h2>
         <div className="ornament mx-auto w-48 opacity-50" />
         <p className="text-[#8e8e8e] font-light italic">Por favor, confirma antes del 1 de Agosto</p>
       </div>

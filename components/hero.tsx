@@ -55,15 +55,15 @@ export function Hero() {
             <div className="w-24 h-24 rounded-full border-2 border-white/50 flex items-center justify-center bg-white/10 backdrop-blur-md group-hover:bg-white/20 transition-all">
               <Play className="w-10 h-10 fill-white" />
             </div>
-            <div className="space-y-2">
-              <h1 className="text-5xl md:text-7xl font-script tracking-normal">Ornella y Sebastian</h1>
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-7xl font-script font-normal tracking-normal">Ornella y Sebastian</h1>
               <p className="text-lg md:text-xl font-accent font-light tracking-[0.6em] uppercase opacity-80">Nuestra Boda</p>
             </div>
             <p className="text-sm italic opacity-60 animate-pulse">Haz clic para entrar</p>
           </button>
         ) : (
           <div className="animate-in fade-in duration-1000 space-y-8">
-            <h1 className="text-8xl md:text-[10rem] font-script tracking-normal mb-4">O & S</h1>
+            <h1 className="text-8xl md:text-[10rem] font-script font-normal tracking-normal mb-4">O & S</h1>
             <div className="h-[1px] w-32 bg-white/50 mx-auto" />
             <p className="text-2xl md:text-3xl font-accent font-light tracking-[0.6em] uppercase">18 de Diciembre 2026</p>
             <button

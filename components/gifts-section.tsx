@@ -25,7 +25,7 @@ export function GiftsSection() {
   return (
     <div className="text-center py-16 px-8 rounded-3xl bg-white shadow-xl shadow-[#c9a86c]/5 border border-[#c9a86c]/10 space-y-8 relative overflow-hidden">
       <div className="space-y-4">
-        <h2 className="text-4xl font-serif text-[#4a4a4a]">Mesa de Regalos</h2>
+        <h2 className="text-4xl md:text-6xl font-script font-normal text-[#4a4a4a]">Mesa de Regalos</h2>
         <div className="ornament mx-auto w-32 opacity-30" />
         <p className="max-w-xl mx-auto text-[#8e8e8e] font-light leading-relaxed">
           Tu presencia es nuestro mejor regalo. Pero si deseas hacernos un presente, aquí te dejamos los datos para ayudarnos en nuestra luna de miel.

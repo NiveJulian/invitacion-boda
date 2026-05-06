@@ -26,7 +26,7 @@ export function InfoSections() {
           <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mx-auto shadow-md text-[#c9a86c] group-hover:scale-110 transition-transform duration-500">
             <section.icon className="w-8 h-8" />
           </div>
-          <h3 className="text-3xl font-script text-[#4a4a4a]">{section.title}</h3>
+          <h3 className="text-3xl font-script font-normal text-[#4a4a4a]">{section.title}</h3>
           <p className="text-sm md:text-base text-[#4a4a4a] leading-relaxed font-accent font-light tracking-wide">
             {section.content}
           </p>

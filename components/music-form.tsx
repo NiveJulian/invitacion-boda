@@ -40,7 +40,7 @@ export function MusicForm() {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-4xl font-serif text-[#4a4a4a]">¿Qué canción no puede faltar?</h2>
+        <h2 className="text-4xl md:text-6xl font-script font-normal text-[#4a4a4a]">¿Qué canción no puede faltar?</h2>
         <p className="text-[#8e8e8e] font-light italic">Ayúdanos a armar la playlist de la fiesta</p>
       </div>
 
