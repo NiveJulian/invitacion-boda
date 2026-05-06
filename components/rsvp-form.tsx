@@ -13,19 +13,56 @@ import { useState } from "react"
 export function RSVPForm() {
   const { register, handleSubmit, reset, setValue } = useForm()
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [receiptUrl, setReceiptUrl] = useState("");
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    try {
+      setIsUploading(true);
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (data.url) {
+        setReceiptUrl(data.url);
+        toast.success("Comprobante cargado correctamente");
+      } else {
+        toast.error(`Error: ${data.error || "No se pudo subir"}`);
+      }
+    } catch (error) {
+      toast.error("Error al conectar con el servidor");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
   const onSubmit = async (data: any) => {
+    if (!receiptUrl) {
+      toast.error("Por favor, sube el comprobante de transferencia");
+      return;
+    }
+
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3L9NuRn-RBeQyOQUb8LhBw2lTWbTGwwveUuKaCJuJls3SIv65arQr0f2OGViJtF4/exec";
 
     try {
       setIsSubmitting(true);
       const response = await fetch(SCRIPT_URL, {
         method: "POST",
-        body: JSON.stringify({ ...data, sheet: "RSVP" }),
+        body: JSON.stringify({ ...data, receipt: receiptUrl, sheet: "RSVP" }),
       });
 
       if (response.ok) {
         toast.success("¡Confirmación enviada! Te esperamos.");
         reset();
+        setReceiptUrl("");
       }
     } catch (error) {
       toast.error("Hubo un error, por favor intenta de nuevo.");
@@ -33,8 +70,6 @@ export function RSVPForm() {
       setIsSubmitting(false);
     }
   };
-
-
 
   return (
     <div id="rsvp" className="space-y-12">
@@ -84,6 +119,40 @@ export function RSVPForm() {
           </RadioGroup>
         </div>
 
+        {/* Subida de Comprobante */}
+        <div className="space-y-4 p-6 bg-[#faf9f6] rounded-2xl border-2 border-dashed border-[#e5e5e5]">
+          <Label className="text-xs uppercase tracking-widest text-[#8e8e8e]">Comprobante de Transferencia (Obligatorio)</Label>
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleFileUpload}
+              className="hidden"
+              id="receipt-upload"
+            />
+            <label
+              htmlFor="receipt-upload"
+              className={`flex flex-col items-center justify-center w-full h-32 cursor-pointer transition-all ${
+                receiptUrl ? "bg-green-50 border-green-200" : "hover:bg-[#f0f0f0]"
+              }`}
+            >
+              {isUploading ? (
+                <Loader2 className="w-8 h-8 animate-spin text-[#c9a86c]" />
+              ) : receiptUrl ? (
+                <div className="text-center">
+                  <p className="text-green-600 font-medium">✓ Comprobante cargado</p>
+                  <p className="text-xs text-gray-500">Haz clic para cambiar</p>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <p className="text-sm text-gray-500">Haz clic para subir captura</p>
+                  <p className="text-[10px] uppercase tracking-tighter text-gray-400 mt-1">JPG, PNG o Captura de pantalla</p>
+                </div>
+              )}
+            </label>
+          </div>
+        </div>
+
         <div className="space-y-2">
           <Label htmlFor="diet" className="text-xs uppercase tracking-widest text-[#8e8e8e]">Restricciones Alimentarias</Label>
           <Input
@@ -106,8 +175,10 @@ export function RSVPForm() {
 
         <Button
           type="submit"
-          className="w-full bg-[#4a4a4a] hover:bg-black text-white rounded-full h-14 text-sm uppercase tracking-widest transition-all shadow-lg"
+          disabled={isSubmitting || isUploading}
+          className="w-full bg-[#4a4a4a] hover:bg-black text-white rounded-full h-14 text-sm uppercase tracking-widest transition-all shadow-lg flex items-center justify-center"
         >
+          {isSubmitting ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : null}
           Confirmar Asistencia
         </Button>
       </form>
