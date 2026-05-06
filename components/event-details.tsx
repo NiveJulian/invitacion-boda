@@ -63,7 +63,7 @@ export function EventDetails() {
           <MapButton 
             name="Iglesia San José" 
             address="Paso de los Libres, Corrientes"
-            mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3434.619379854445!2d-57.1729094!3d-29.7161833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95aea3092244497b%3A0xc0772093f4c65360!2sIglesia%20San%20Jos%C3%A9!5e0!3m2!1ses!2sar!4v1715031123456!5m2!1ses!2sar"
+            mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d433.1531784296788!2d-57.08593220752567!3d-29.71322870562048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94535cdb39ed4179%3A0xbb485aae0a432a4a!2sParroquia%20San%20Jos%C3%A9!5e0!3m2!1ses!2sar!4v1778105670006!5m2!1ses!2sar"
           />
         </div>
 
