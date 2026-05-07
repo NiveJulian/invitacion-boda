@@ -26,7 +26,7 @@ const josefin = Josefin_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ornellaysebastian.byfesta.com.ar"),
+  metadataBase: new URL("https://sebayorne.byfesta.com.ar"),
   title: "Invitación | Ornella y Sebastian",
   description:
     "Te invitamos a ser parte de este momento tan especial. ¡Nos casamos el 18 de Diciembre de 2026! Entrá para ver los detalles.",
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     title: "Ornella y Sebastian | Nuestra Boda",
     description:
       "Acompañanos a celebrar nuestro amor y el comienzo de una nueva etapa juntos.",
-    url: "https://ornellaysebastian.byfesta.com.ar",
+    url: "https://sebayorne.byfesta.com.ar",
     siteName: "Boda Ornella y Sebastian",
     images: [
       {
-        url: "https://ornellaysebastian.byfesta.com.ar/portada.jpg",
+        url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/portada.jpg",
         width: 1200,
         height: 630,
         alt: "Invitación de Boda - Ornella y Sebastian",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ornella y Sebastian | Nuestra Boda",
     description: "Acompañanos a celebrar nuestro amor.",
-    images: ["https://ornellaysebastian.byfesta.com.ar/portada.jpg"],
+    images: ["https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/portada.jpg"],
   },
   icons: {
     icon: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/favicon.ico",
+        url: "https://cdn.atomsolucionesit.com.ar/misxv/BodaSYO/portada.jpg",
         type: "image/svg+xml",
       },
     ],
