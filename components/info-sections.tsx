@@ -5,7 +5,7 @@ export function InfoSections() {
     {
       icon: Shirt,
       title: "Dress Code",
-      content: "Elegante. Color prohibido: Blanco (reservado novia) y Marrón (reservado damas de honor). Colores sugeridos: Tierra, verde, celestito, amarillito, etc. Estilo boho.",
+      content: "Elegante. Color prohibido: Blanco (reservado novia) y Marrón (reservado damas de honor).",
       color: "bg-[#fdfbf7]"
     },
     {
