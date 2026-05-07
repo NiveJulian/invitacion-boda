@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     siteName: "Boda Ornella y Sebastian",
     images: [
       {
-        url: "/icon.jpg",
+        url: "https://ornellaysebastian.byfesta.com.ar/portada.jpg",
         width: 1200,
         height: 630,
-        alt: "Ornella y Sebastian - Nuestra Boda",
+        alt: "Invitación de Boda - Ornella y Sebastian",
         type: "image/jpeg",
       },
     ],
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ornella y Sebastian | Nuestra Boda",
     description: "Acompañanos a celebrar nuestro amor.",
-    images: ["/icon.jpg"],
+    images: ["https://ornellaysebastian.byfesta.com.ar/portada.jpg"],
   },
   icons: {
     icon: [
