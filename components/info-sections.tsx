@@ -11,7 +11,7 @@ export function InfoSections() {
     {
       icon: Info,
       title: "Tarjeta & Confirmación",
-      content: "Valor de la tarjeta: $45.000. Se confirma asistencia con el comprobante de pago (Tiempo límite hasta el 1 de Agosto).",
+      content: "Valor de la tarjeta: $45.000. Se confirma asistencia con el comprobante de pago (Tiempo límite hasta el 1 de Septiembre).",
       color: "bg-[#f8f9fa]"
     }
   ]

@@ -99,7 +99,7 @@ export function RSVPForm() {
       <div className="text-center space-y-4">
         <h2 className="text-4xl md:text-6xl font-script font-normal text-[#4a4a4a]">Confirma tu Asistencia</h2>
         <div className="ornament mx-auto w-48 opacity-50" />
-        <p className="text-[#8e8e8e] font-light italic">Por favor, confirma antes del 1 de Agosto</p>
+        <p className="text-[#8e8e8e] font-light italic">Por favor, confirma antes del 1 de Septiembre</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl border border-[#f0f0f0] space-y-8">
